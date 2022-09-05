@@ -12,9 +12,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-button {
+button, a {
   outline: none;
   border: none;
+  text-decoration: none;
 }

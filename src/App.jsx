@@ -1,12 +1,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
-import { faRefresh, faShareAlt } from "@fortawesome/free-solid-svg-icons";
+import { faRefresh } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 import quotes from './quotes.json';
 
 import './App.scss';
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const App = () => {
   /* Quote script */
@@ -48,7 +49,7 @@ const App = () => {
         particle.y += Math.sin(particle.radians) * 5;
         
         load_ctx.beginPath();
-        load_ctx.fillStyle = 'rgba(89, 50, 173, 0.2)';
+        load_ctx.fillStyle = 'rgba(107, 22, 225, 0.2)';
         load_ctx.fillRect(0, 0, load_canvas.width, load_canvas.height);
         if (!loaded) requestAnimationFrame(load_animate);
     }
@@ -58,7 +59,17 @@ const App = () => {
     const selected_quote = quotes[Math.floor(Math.random() * quotes.length)];
     quote_el.innerHTML = selected_quote.quote;
     origin_el.innerHTML = '~ ' + selected_quote.movie + ', ' + selected_quote.year;
-  }
+  };
+
+  /* Copy text from quote wrapper */
+  const copy_quote = () => {
+    const quote = quote_el.innerHTML;
+    const origin = origin_el.innerHTML;
+    const text = quote + ' ' + origin;
+    navigator.clipboard.writeText(text);
+
+    alert('Copied to clipboard!');
+  };
 
   useEffect(() => {
     /* Canvas script */
@@ -67,9 +78,14 @@ const App = () => {
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    let canvas_color = 'azure';
+
+    new_quote.addEventListener('click', () => {
+      canvas_color = 'rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ')';
+    })
 
     const animate = () => {
-      ctx.fillStyle = 'azure';
+      ctx.fillStyle = canvas_color;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       requestAnimationFrame(animate);
     };
@@ -89,13 +105,15 @@ const App = () => {
           <div className="origin" id="origin_el"></div>
         </div>
         <div className="buttons">
-          <button onClick={load_quote}>
+          <button onClick={load_quote} id='new_quote'>
             <FontAwesomeIcon icon={ faRefresh } />
           </button>
-          <button>
-            <FontAwesomeIcon icon={ faShareAlt } />
-          </button>
-          <button>
+          <a href="https://twitter.com/intent/tweet" target='_blank' rel="noreferrer">
+            <button>
+              <FontAwesomeIcon icon={ faTwitter } />
+            </button>
+          </a>
+          <button onClick={copy_quote}>
             <FontAwesomeIcon icon={ faCopy } />
           </button>
         </div>

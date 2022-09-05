@@ -12,9 +12,10 @@
   margin: 10px;
 }
 .wrapper {
-  background: #673AB7;
-  background: -webkit-linear-gradient(to right, #512DA8, #673AB7);
-  background: linear-gradient(to right, #512DA8, #673AB7);
+  background: #8E2DE2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   width: 80%;
   max-width: 500px;
   height: auto;
@@ -84,17 +85,17 @@
       }
       
       &:nth-child(1) {
-        background: black;
-        
-      }
-      &:nth-child(2) {
-        background: black;
-        
-        
+        background: crimson;
+          
       }
       &:nth-child(3) {
-        background: black;
+        background: #00b894;
       }
     }
   }
+}
+
+// fix a bug with the twitter share button
+a button {
+  background: blue !important;
 }
