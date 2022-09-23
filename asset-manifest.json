@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.c543ec7d.css",
-    "main.js": "/static/js/main.d61aba66.js",
-    "static/js/787.8b31b0b9.chunk.js": "/static/js/787.8b31b0b9.chunk.js",
-    "index.html": "/index.html",
-    "main.c543ec7d.css.map": "/static/css/main.c543ec7d.css.map",
-    "main.d61aba66.js.map": "/static/js/main.d61aba66.js.map",
-    "787.8b31b0b9.chunk.js.map": "/static/js/787.8b31b0b9.chunk.js.map"
+    "main.css": "/movie-quote-generator/static/css/main.c543ec7d.css",
+    "main.js": "/movie-quote-generator/static/js/main.3647d465.js",
+    "static/js/787.8b31b0b9.chunk.js": "/movie-quote-generator/static/js/787.8b31b0b9.chunk.js",
+    "index.html": "/movie-quote-generator/index.html",
+    "main.c543ec7d.css.map": "/movie-quote-generator/static/css/main.c543ec7d.css.map",
+    "main.3647d465.js.map": "/movie-quote-generator/static/js/main.3647d465.js.map",
+    "787.8b31b0b9.chunk.js.map": "/movie-quote-generator/static/js/787.8b31b0b9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c543ec7d.css",
-    "static/js/main.d61aba66.js"
+    "static/js/main.3647d465.js"
   ]
 }
