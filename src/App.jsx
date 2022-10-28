@@ -78,14 +78,21 @@ const App = () => {
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    let canvas_color = 'azure';
+    let canvas_color = {new_r: 255, new_g: 240, new_b: 255}; // azure
 
     new_quote.addEventListener('click', () => {
-      canvas_color = 'rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ')';
+      const random_color = () => Math.floor(Math.random() * 255);
+      canvas_color = {new_r: random_color(), new_g: random_color(), new_b: random_color()};
     })
 
     const animate = () => {
-      ctx.fillStyle = canvas_color;
+      const steps = 50;
+      const [current_r, current_g, current_b] = ctx.getImageData(5, 5, 1, 1).data;
+      const {new_r, new_g, new_b} = canvas_color;
+      const step_r = (new_r - current_r) / steps;
+      const step_g = (new_g - current_g) / steps;
+      const step_b = (new_b - current_b) / steps;
+      ctx.fillStyle = `rgb(${current_r + step_r}, ${current_g + step_g}, ${current_b + step_b})`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       requestAnimationFrame(animate);
     };
