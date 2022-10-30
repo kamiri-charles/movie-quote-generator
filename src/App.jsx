@@ -8,17 +8,19 @@ import quotes from './quotes.json';
 
 import './App.scss';
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
 
 const App = () => {
+  const [loaded, setLoaded] = useState(false);
   /* Quote script */
   const load_quote = () => {
     const load_canvas = document.getElementById('load_canvas');
     if (load_canvas) {
-      let loaded = false;
+      setLoaded(false);
       setTimeout(() => {
         quote_wrapper.style.color = 'white';
         load_canvas.style.opacity = 0;
-        loaded = true;
+        setLoaded(true);
       }, 2000)
       load_canvas.width = 100;
       load_canvas.height = 100;
@@ -52,7 +54,7 @@ const App = () => {
         load_ctx.fillStyle = 'rgba(107, 22, 225, 0.2)';
         load_ctx.fillRect(0, 0, load_canvas.width, load_canvas.height);
         if (!loaded) requestAnimationFrame(load_animate);
-    }
+      }
       load_animate()
     }
     
@@ -98,7 +100,7 @@ const App = () => {
     };
     animate();
     load_quote();
-  })
+  },[])
 
 
   return (
@@ -112,7 +114,7 @@ const App = () => {
           <div className="origin" id="origin_el"></div>
         </div>
         <div className="buttons">
-          <button onClick={load_quote} id='new_quote'>
+          <button onClick={load_quote} id='new_quote' disabled={!loaded}>
             <FontAwesomeIcon icon={ faRefresh } />
           </button>
           <a href="https://twitter.com/intent/tweet" target='_blank' rel="noreferrer">
