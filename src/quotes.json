@@ -1596,12 +1596,6 @@
       "year": 2001
     },
     {
-      "quote": "All we have to decide what to do with the time that is given to us.",
-      "movie": "Lord Of The Ring - The Fellowships Of The Ring",
-      "type": "movie",
-      "year": 2001
-    },
-    {
       "quote": "Exercise gives you endorphins. Endorphins make you happy. Happy people just don't shoot their husbands. They just don't.",
       "movie": "Legally Blonde",
       "type": "movie",
@@ -1748,12 +1742,6 @@
     {
       "quote": "You know, I'm something of a scientist myself.",
       "movie": "Spiderman",
-      "type": "movie",
-      "year": 2002
-    },
-    {
-      "quote": "My precious",
-      "movie": "The Lord of the Rings: The Two Towers",
       "type": "movie",
       "year": 2002
     },
@@ -2276,6 +2264,12 @@
     {
       "quote": "Death is the road to awe.",
       "movie": "The Fountain",
+      "type": "movie",
+      "year": 2006
+    },
+    {
+      "quote": "We're gonna live! We're gonna Die!",
+      "movie": "Ice Age 2",
       "type": "movie",
       "year": 2006
     },
@@ -2881,7 +2875,13 @@
     },
     {
       "quote": "Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?",
-      "movie": "Harry Potter and the Deathly Hallows",
+      "movie": "Harry Potter and the Deathly Hallows part 2",
+      "type": "movie",
+      "year": 2011
+    },
+    {
+      "quote": "C'mon Tom. Let's finish this the way we started. Together.",
+      "movie": "Harry Potter and the Deathly Hallows part 2",
       "type": "movie",
       "year": 2011
     },
