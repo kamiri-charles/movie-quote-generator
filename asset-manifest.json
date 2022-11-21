@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/movie-quote-generator/static/css/main.c543ec7d.css",
-    "main.js": "/movie-quote-generator/static/js/main.a517f9c4.js",
+    "main.css": "/movie-quote-generator/static/css/main.df514cc3.css",
+    "main.js": "/movie-quote-generator/static/js/main.e0fe3b29.js",
     "static/js/787.8b31b0b9.chunk.js": "/movie-quote-generator/static/js/787.8b31b0b9.chunk.js",
     "index.html": "/movie-quote-generator/index.html",
-    "main.c543ec7d.css.map": "/movie-quote-generator/static/css/main.c543ec7d.css.map",
-    "main.a517f9c4.js.map": "/movie-quote-generator/static/js/main.a517f9c4.js.map",
+    "main.df514cc3.css.map": "/movie-quote-generator/static/css/main.df514cc3.css.map",
+    "main.e0fe3b29.js.map": "/movie-quote-generator/static/js/main.e0fe3b29.js.map",
     "787.8b31b0b9.chunk.js.map": "/movie-quote-generator/static/js/787.8b31b0b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c543ec7d.css",
-    "static/js/main.a517f9c4.js"
+    "static/css/main.df514cc3.css",
+    "static/js/main.e0fe3b29.js"
   ]
 }
