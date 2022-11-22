@@ -12,6 +12,10 @@ import { useState } from "react";
 
 const App = () => {
   const [loaded, setLoaded] = useState(false);
+  const [Dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
   /* Quote script */
   const load_quote = () => {
     const load_canvas = document.getElementById("load_canvas");
@@ -74,11 +78,14 @@ const App = () => {
   };
 
   useEffect(() => {
+    function resizeHandler() {
+      setDimensions({ width: window.innerWidth, height: window.innerHeight });
+    }
     /* Canvas script */
     /** @type {HTMLCanvasElement} */
     const canvas = document.getElementById("bg_canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // canvas.width = Dimensions.width;
+    // canvas.height = Dimensions.height;
     const ctx = canvas.getContext("2d");
 
     let canvas_color = { new_r: 255, new_g: 240, new_b: 255 }; // azure
@@ -98,7 +105,7 @@ const App = () => {
         5,
         5,
         1,
-        1
+        1,
       ).data;
       const { new_r, new_g, new_b } = canvas_color;
       const step_r = (new_r - current_r) / steps;
@@ -112,11 +119,18 @@ const App = () => {
     };
     animate();
     load_quote();
+    window.addEventListener("resize", resizeHandler);
+    // return (_) => {
+    //   window.removeEventListener("resize", handleResize);
+    // };
   }, []);
 
   return (
     <main>
-      <canvas id='bg_canvas'></canvas>
+      <canvas
+        id='bg_canvas'
+        width={Dimensions.width}
+        height={Dimensions.height}></canvas>
       <div className='title'>Random Movie Quote Generator</div>
       <div className='wrapper'>
         <div className='quote-wrapper' id='quote_wrapper'>
@@ -131,8 +145,7 @@ const App = () => {
           <a
             href='https://twitter.com/intent/tweet'
             target='_blank'
-            rel='noreferrer'
-          >
+            rel='noreferrer'>
             <button>
               <FontAwesomeIcon icon={faTwitter} />
             </button>
