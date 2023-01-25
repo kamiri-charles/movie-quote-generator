@@ -47,6 +47,20 @@ button:disabled {
   margin-bottom: 2rem;
 }
 
+.contributors {
+  margin-top: 2rem;
+  font-family: "Ubuntu";
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+
+.contributor-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+
 .wrapper {
   width: 80%;
   max-width: 500px;
