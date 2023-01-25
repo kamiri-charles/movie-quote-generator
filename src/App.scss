@@ -47,16 +47,18 @@ button:disabled {
   margin-bottom: 2rem;
 }
 
-.contributers {
+.contributors {
   margin-top: 2rem;
   font-family: "Ubuntu";
   margin-bottom: 2rem;
   text-decoration: underline;
 }
 
-.contributerAvatars {
-  height: 85px;
-  width: 85px;
+.contributor-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 1rem;
 }
 
 .wrapper {
