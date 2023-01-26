@@ -126,12 +126,13 @@ const App = () => {
   }, []);
 
   return (
-    <main>
+    <main id="main">
+      <a href="#main" className="hidden" alt="Skip to main content link">Skip to main content</a>
       <canvas
         id='bg_canvas'
         width={Dimensions.width}
         height={Dimensions.height}></canvas>
-      <div className='title'>Random Movie Quote Generator</div>
+      <h1 className='title'>Random Movie Quote Generator</h1>
       <div className='wrapper'>
         <div className='quote-wrapper' id='quote_wrapper'>
           <canvas id='load_canvas'></canvas>
@@ -139,18 +140,19 @@ const App = () => {
           <div className='origin' id='origin_el'></div>
         </div>
         <div className='buttons'>
-          <button onClick={load_quote} id='new_quote' disabled={!loaded}>
+          <button onClick={load_quote} id='new_quote' disabled={!loaded}  aria-label="Generate A New Quote Button">
             <FontAwesomeIcon icon={faRefresh} />
           </button>
           <a
             href='https://twitter.com/intent/tweet'
             target='_blank'
-            rel='noreferrer'>
-            <button>
+            rel='noreferrer'
+            alt="Link To Twitter">
+            <button  aria-label="Link To Twitter Button">
               <FontAwesomeIcon icon={faTwitter} />
             </button>
           </a>
-          <button onClick={copy_quote}>
+          <button onClick={copy_quote}  aria-label="Copy The Current Quote Button">
             <FontAwesomeIcon icon={faCopy} />
           </button>
         </div>

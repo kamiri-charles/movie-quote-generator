@@ -10,6 +10,7 @@
   font-size: 1.2em;
   text-decoration: underline;
   margin-bottom: 2rem;
+  overflow: auto;
 }
 .wrapper {
   background: #8e2de2; /* fallback for old browsers */
@@ -37,11 +38,12 @@
   .quote-wrapper {
     width: calc(90% - 80px);
     height: auto;
+    overflow: auto;
     //color: white;
     color: transparent;
     padding: 50px 50px 0px 50px;
     border-bottom: 3px solid white;
-
+    
     #load_canvas {
       position: absolute;
       top: 45%;
@@ -65,6 +67,7 @@
       text-align: right;
       font-size: 1em;
       margin-top: 100px;
+      overflow: auto;
     }
   }
 
@@ -100,6 +103,13 @@
       }
     }
   }
+}
+
+.hidden{
+  left: 50%;
+  position: absolute;
+  transform: translateY(-100%);
+  color: transparent;
 }
 
 // fix a bug with the twitter share button
