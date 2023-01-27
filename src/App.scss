@@ -100,6 +100,10 @@ button:disabled {
     padding: 30px;
     border-bottom: 3px solid #f5f5f5;
     overflow: auto;
+    //     padding: 15px;
+    // width: calc(100% - 40px);
+    // height: 201px;
+    // overflow-y: auto;
     @media screen and (max-width: 1200px) {
       padding: 25px;
       width: calc(100% - 115px);
@@ -186,4 +190,8 @@ button:disabled {
 .remove-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

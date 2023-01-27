@@ -40,8 +40,8 @@ const App = () => {
       <a href="#main" className="hidden">
         Skip to main content
       </a>
-      <h1 className="title remove-scrollbar">Random Movie Quote Generator</h1>
       <Suspense fallback={renderLoader()}>
+        <h1 className="title remove-scrollbar">Random Movie Quote Generator</h1>
         <QuoteGeneratorComponent props={{ data, copy_quote, load_quote }} />
         <ContributorsComponent />
       </Suspense>
