@@ -53,6 +53,7 @@ button:disabled {
   font-family: "Ubuntu";
   margin-bottom: 2rem;
   text-decoration: underline;
+  overflow: auto;
 }
 
 .contributor-avatar {
@@ -135,4 +136,11 @@ button:disabled {
   position: absolute;
   transform: translateY(-100%);
   color: transparent;
+  top: -100%;
+}
+
+.remove-scrollbar{
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  
 }
