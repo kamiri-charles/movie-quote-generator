@@ -18,7 +18,7 @@ const App = () => {
 
 	};
 
-	const requestContributers = () => {
+	const requestContributors = () => {
 		return Promise.resolve(fetch(`https://api.github.com/repos/kamiri-charles/movie-quote-generator/contributors`)
 		.then(response => response.json())
 		.then(function (data){
@@ -51,7 +51,7 @@ const App = () => {
 	
 	useEffect(() => {
 		load_quote();
-		requestContributers();
+		requestContributors();
 	}, []);
 
 
@@ -85,7 +85,7 @@ const App = () => {
 				</div>
 
 			</div>
-			<div className="contributors">Contributers:</div>
+			<div className="contributors">Contributors:</div>
 			<ul className="contList">
 			</ul>
 		</div>
