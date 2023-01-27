@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap');
-@import 'loaders.css/src/animations/pacman.scss';
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap");
+@import "loaders.css/src/animations/pacman.scss";
 
 /* Resets and loader */
 
@@ -10,14 +10,15 @@
 }
 
 .loader {
-    transform: scale(0.5);
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  transform: scale(0.5);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button, a {
+button,
+a {
   outline: none;
   border: none;
   text-decoration: none;
@@ -25,7 +26,6 @@ button, a {
 
 button:disabled {
   background: gray !important;
-  
 }
 
 /* ----------------- */
@@ -44,8 +44,9 @@ button:disabled {
   font-family: "Pacifico", cursive;
   font-size: 1.2em;
   text-decoration: underline;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   overflow: auto;
+  height: 50px;
 }
 
 .contributors {
@@ -54,13 +55,31 @@ button:disabled {
   margin-bottom: 2rem;
   text-decoration: underline;
   overflow: auto;
+  height: 20px;
 }
 
 .contributor-avatar {
-  height: 50px;
-  width: 50px;
+  max-height: 50px;
+  max-width: 50px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   margin: 0 1rem;
+  object-fit: cover;
+  aspect-ratio: 8 / 10;
+}
+
+.contributors-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 16px;
+
+  a {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
 }
 
 .wrapper {
@@ -73,22 +92,38 @@ button:disabled {
   justify-content: space-around;
   border-radius: 9px;
   background: #000;
-  
+
   .quote-wrapper {
-    width: calc(90% - 80px);
+    width: calc(100% - 120px);
     height: auto;
     color: #f5f5f5;
-    padding: 50px 50px 0px 50px;
+    padding: 30px;
     border-bottom: 3px solid #f5f5f5;
     overflow: auto;
+    @media screen and (max-width: 1200px) {
+      padding: 25px;
+      width: calc(100% - 115px);
+    }
+    @media screen and (max-width: 600px) {
+      padding: 20px;
+      width: calc(100% - 60px);
+    }
+    @media screen and (max-width: 425px) {
+      padding: 15px;
+      width: calc(100% - 40px);
+    }
     .quote {
       font-family: "Ubuntu", sans-serif;
       font-size: 1em;
       line-height: 1.5em;
       font-weight: 300;
       margin-bottom: 20px;
+      @media screen and (max-width: 425px) {
+        margin-top: 25px;
+        line-height: 23px;
+      }
     }
-    
+
     .origin {
       font-family: "Satisfy", "Pacifico", sans-serif;
       text-align: right;
@@ -97,26 +132,35 @@ button:disabled {
       overflow: auto;
     }
   }
-  
+
   .buttons {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 90%;
     height: 100px;
-    
-    button, a {
+    button,
+    a {
       border-radius: 6px;
       cursor: pointer;
       font-size: 24px;
       transition: all 0.2s ease;
       padding: 10px 30px;
       text-align: center;
-      
+      @media screen and (max-width: 1200px) {
+        padding: 9px 28px;
+      }
+      @media screen and (max-width: 600px) {
+        padding: 8px 25px;
+      }
+      @media screen and (max-width: 425px) {
+        padding: 6px 25px;
+      }
+
       &:hover {
         transform: scale(1.09);
       }
-      
+
       &:nth-child(1) {
         background: crimson;
       }
@@ -131,7 +175,7 @@ button:disabled {
   }
 }
 
-.hidden{
+.hidden {
   left: 50%;
   position: absolute;
   transform: translateY(-100%);
@@ -139,8 +183,7 @@ button:disabled {
   top: -100%;
 }
 
-.remove-scrollbar{
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-  
+.remove-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
