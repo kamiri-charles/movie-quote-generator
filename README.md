@@ -5,8 +5,6 @@
 - [Description](#Description)
 - [Link](#Link)
 - [Technologies](#Technologies)
-- [User Instructions](#User-Instructions)
-- [Contributors](#Contributors)
 - [Quesitons](#Questions)
 
 ---
