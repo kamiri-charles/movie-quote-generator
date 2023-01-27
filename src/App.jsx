@@ -17,7 +17,31 @@ const App = () => {
 		}, 3000)
 
 	};
-	
+
+	const requestContributers = () => {
+		return Promise.resolve(fetch(`https://api.github.com/repos/kamiri-charles/movie-quote-generator/contributors`)
+		.then(response => response.json())
+		.then(function (data){
+			let noDoubles = document.getElementsByClassName('noDoubles');
+			if (noDoubles.length === 0) {
+				for (let i = 0; i < data.length; i++) {
+				let contUrl = data[i].html_url;
+				let contAva = data[i].avatar_url;
+				let clist = document.querySelector('.contList');
+				let aEl = document.createElement('a');
+				let imgEl = document.createElement('img');
+				clist.appendChild(aEl);
+				aEl.append(imgEl)
+				aEl.href = contUrl;
+				imgEl.href= contUrl;
+				imgEl.src = contAva;
+				imgEl.className = 'contributor-avatar noDoubles'
+				}
+			} else {}
+	}));
+}
+
+
 	/* Copy quote */
 	const copy_quote = () => {
 		navigator.clipboard.writeText(data.quote + " - " + data.origin);
@@ -27,6 +51,7 @@ const App = () => {
 	
 	useEffect(() => {
 		load_quote();
+		requestContributers();
 	}, []);
 
 
@@ -60,35 +85,8 @@ const App = () => {
 				</div>
 
 			</div>
-			<div className="contributors">Contributors:</div>
-			<ul>
-				<a href="https://github.com/kamiri-charles">
-					<img alt="contributor-img" href="https://github.com/kamiri-charles" src="https://avatars.githubusercontent.com/u/78848071?v=4" className="contributor-avatar" />
-				</a>
-
-				<a href="https://github.com/sgtwilko">
-					<img alt="contributor-img" href="https://github.com/sgtwilko" src="https://avatars.githubusercontent.com/u/658876?v=4" className="contributor-avatar" />
-				</a>
-
-				<a href="https://github.com/aryan1306">
-					<img alt="contributor-img" href="https://github.com/aryan1306" src="https://avatars.githubusercontent.com/u/60398102?v=4" className="contributor-avatar" />
-				</a>
-
-				<a href="https://github.com/JosielMatos">
-					<img alt="contributor-img" href="https://github.com/JosielMatos" src="https://avatars.githubusercontent.com/u/66519559?v=4" className="contributor-avatar" />
-				</a>
-
-				<a href="https://github.com/DimensionalDragon">
-					<img alt="contributor-img" href="https://github.com/DimensionalDragon" src="https://avatars.githubusercontent.com/u/79691052?v=4" className="contributor-avatar" />
-				</a>
-
-				<a href="https://github.com/mishhuang">
-					<img alt="contributor-img" href="https://github.com/mishhuang" src="https://avatars.githubusercontent.com/u/111394557?v=4" className="contributor-avatar" />
-				</a>
-
-				<a href="https://github.com/ryanpjhickey">
-					<img alt="contributor-img" href="https://github.com/ryanpjhickey" src="https://avatars.githubusercontent.com/u/108383347?v=4" className="contributor-avatar" />
-				</a>
+			<div className="contributors">Contributers:</div>
+			<ul className="contList">
 			</ul>
 		</div>
 		);
