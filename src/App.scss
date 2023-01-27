@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap');
 @import 'loaders.css/src/animations/pacman.scss';
+@import 'loaders.css/src/animations/ball-pulse.scss';
 
 /* Resets and loader */
 
@@ -10,11 +11,11 @@
 }
 
 .loader {
-    transform: scale(0.5);
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  transform: scale(0.5);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button, a {
@@ -47,19 +48,7 @@ button:disabled {
   margin-bottom: 2rem;
 }
 
-.contributors {
-  margin-top: 2rem;
-  font-family: "Ubuntu";
-  margin-bottom: 2rem;
-  text-decoration: underline;
-}
 
-.contributor-avatar {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  margin: 0 1rem;
-}
 
 .wrapper {
   width: 80%;
@@ -117,13 +106,88 @@ button:disabled {
       &:nth-child(1) {
         background: crimson;
       }
-
+      
       &:nth-child(2) {
         background: blue;
       }
       &:nth-child(3) {
         background: #00b894;
       }
+    }
+  }
+}
+
+.info {
+  position: fixed;
+  top: 20%;
+  left: 70%;
+  font-size: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.8); }
+  100% { box-shadow: 0 0 0 15px rgba(0, 0, 255, 0); }
+}
+
+
+.contributors {
+  position: fixed;
+  top: 25%;
+  left: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: white;
+  border-radius: 9px;
+  transition: all 0.3s ease;
+  max-width: 300px;
+  opacity: 1;
+  transition: all 0.3s ease;
+
+  &.hidden {
+    opacity: 0;
+  }
+  
+  span {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: underline;
+  }
+  
+  .contributor {
+    display: grid;
+    place-items: center;
+    color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.7)
+    }
+    
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    
+    span {
+      text-decoration: none;
     }
   }
 }
