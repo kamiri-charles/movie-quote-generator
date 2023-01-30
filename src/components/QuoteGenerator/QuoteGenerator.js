@@ -9,15 +9,13 @@ const QuoteGenerator = ({ props }) => {
   const { data, copy_quote, load_quote } = props;
   return (
     <div className="wrapper">
-      <div className="quote-wrapper remove-scrollbar">
+      <div className="quote-wrapper">
         {!data ? (
           <Loader type="pacman" />
         ) : (
           <>
             <div className="quote">{data.quote}</div>
-            <div className="origin remove-scrollbar">
-              {data.movie + " ~ " + data.year}
-            </div>
+            <div className="origin">{data.movie + " ~ " + data.year}</div>
           </>
         )}
       </div>
@@ -36,7 +34,6 @@ const QuoteGenerator = ({ props }) => {
           target="_blank"
           rel="noreferrer"
           aria-label="Link To Share Current Quote On Twitter"
-          alt=""
         >
           <FontAwesomeIcon icon={faTwitter} color="white" />
         </a>

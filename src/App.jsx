@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleInfo, faRefresh } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faCopy } from "@fortawesome/free-regular-svg-icons";
-import Loader from "react-loaders";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import quotes from "./quotes.json";
 import "./App.scss";
-import Contributor from "./Contributor";
 import { useRef } from "react";
+import Contributors from "./components/Contributors/Contributors";
+import QuoteGenerator from "./components/QuoteGenerator/QuoteGenerator";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -51,51 +49,19 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="title">Random Movie Quote Generator</div>
-
-      <div className="wrapper">
-        <div className="quote-wrapper">
-          {!data ? (
-            <Loader type="pacman" />
-          ) : (
-            <>
-              <div className="quote">{data.quote}</div>
-              <div className="origin">{data.movie + " ~ " + data.year}</div>
-            </>
-          )}
-        </div>
-
-        <div className="buttons">
-          <button onClick={load_quote} disabled={!data}>
-            <FontAwesomeIcon icon={faRefresh} color="white" />
-          </button>
-
-          <a
-            href="https://twitter.com/intent/tweet"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faTwitter} color="white" />
-          </a>
-
-          <button onClick={copy_quote}>
-            <FontAwesomeIcon icon={faCopy} color="white" />
-          </button>
-        </div>
-      </div>
-
+      <a href="#main" className="hidden">
+        Skip to main content
+      </a>
       <div className="info" onClick={contrib_view}>
         <FontAwesomeIcon icon={faCircleInfo} color="blue" />
       </div>
+      <h1 className="title" tabIndex="0">
+        Random Movie Quote Generator
+      </h1>
 
-      <div className="contributors hidden" ref={contrib}>
-        <span>Contributors</span>
-        {!contributors ? (
-          <Loader type="ball-pulse" />
-        ) : (
-          contributors.map((c, idx) => <Contributor data={c} key={idx} />)
-        )}
-      </div>
+      <QuoteGenerator props={{ data, copy_quote, load_quote }} />
+
+      <Contributors props={{ contributors, contrib }} />
     </div>
   );
 };
