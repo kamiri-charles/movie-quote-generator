@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap');
-@import 'loaders.css/src/animations/pacman.scss';
-@import 'loaders.css/src/animations/ball-pulse.scss';
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap");
+@import "loaders.css/src/animations/pacman.scss";
+@import "loaders.css/src/animations/ball-pulse.scss";
 
 /* Resets and loader */
 
@@ -18,7 +18,8 @@
   justify-content: center;
 }
 
-button, a {
+button,
+a {
   outline: none;
   border: none;
   text-decoration: none;
@@ -26,7 +27,6 @@ button, a {
 
 button:disabled {
   background: gray !important;
-  
 }
 
 /* ----------------- */
@@ -45,10 +45,10 @@ button:disabled {
   font-family: "Pacifico", cursive;
   font-size: 1.2em;
   text-decoration: underline;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  overflow: auto;
+  height: 50px;
 }
-
-
 
 .wrapper {
   width: 80%;
@@ -60,53 +60,79 @@ button:disabled {
   justify-content: space-around;
   border-radius: 9px;
   background: #000;
-  
+
   .quote-wrapper {
-    width: calc(90% - 80px);
+    width: calc(100% - 120px);
     height: auto;
     color: #f5f5f5;
-    padding: 50px 50px 0px 50px;
+    padding: 30px;
     border-bottom: 3px solid #f5f5f5;
-    
+    overflow: auto;
+    @media screen and (max-width: 1200px) {
+      padding: 25px;
+      width: calc(100% - 115px);
+    }
+    @media screen and (max-width: 600px) {
+      padding: 20px;
+      width: calc(100% - 60px);
+    }
+    @media screen and (max-width: 425px) {
+      padding: 15px;
+      width: calc(100% - 40px);
+    }
     .quote {
       font-family: "Ubuntu", sans-serif;
       font-size: 1em;
       line-height: 1.5em;
       font-weight: 300;
       margin-bottom: 20px;
+      @media screen and (max-width: 425px) {
+        margin-top: 25px;
+        line-height: 23px;
+      }
     }
-    
+
     .origin {
       font-family: "Satisfy", "Pacifico", sans-serif;
       text-align: right;
       font-size: 1em;
       margin-top: 100px;
+      overflow: auto;
     }
   }
-  
+
   .buttons {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 90%;
     height: 100px;
-    
-    button, a {
+    button,
+    a {
       border-radius: 6px;
       cursor: pointer;
       font-size: 24px;
       transition: all 0.2s ease;
       padding: 10px 30px;
       text-align: center;
-      
+      @media screen and (max-width: 1200px) {
+        padding: 9px 28px;
+      }
+      @media screen and (max-width: 600px) {
+        padding: 8px 25px;
+      }
+      @media screen and (max-width: 425px) {
+        padding: 6px 25px;
+      }
+
       &:hover {
         transform: scale(1.09);
       }
-      
+
       &:nth-child(1) {
         background: crimson;
       }
-      
+
       &:nth-child(2) {
         background: blue;
       }
@@ -118,9 +144,6 @@ button:disabled {
 }
 
 .info {
-  position: fixed;
-  top: 20%;
-  left: 70%;
   font-size: 25px;
   border-radius: 50%;
   cursor: pointer;
@@ -129,22 +152,28 @@ button:disabled {
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
   transition: all 0.3s ease;
-  
+  margin-right: 256px;
   &:hover {
     transform: scale(1.2);
   }
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.8); }
-  100% { box-shadow: 0 0 0 15px rgba(0, 0, 255, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(0, 0, 255, 0);
+  }
 }
 
-
 .contributors {
-  position: fixed;
-  top: 25%;
-  left: 70%;
+  width: 46%;
+  height: 388px;
+  overflow-y: auto;
+  position: absolute;
+  top: 40%;
+  left: 27%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -153,41 +182,95 @@ button:disabled {
   color: white;
   border-radius: 9px;
   transition: all 0.3s ease;
-  max-width: 300px;
   opacity: 1;
   transition: all 0.3s ease;
+  @media screen and (max-width: 1200px) {
+    width: 82%;
+    left: 9%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 80%;
+    left: 10%;
+  }
+  @media screen and (max-width: 425px) {
+    width: 80%;
+    left: 10%;
+  }
+
+  // Media Queries for Height
+
+  @media screen and (max-height: 1500px) {
+    top: 39%;
+  }
+
+  @media screen and (max-height: 1200px) {
+    top: 37%;
+  }
+
+  @media screen and (max-height: 990px) {
+    top: 35%;
+  }
+
+  @media screen and (max-height: 890px) {
+    top: 33%;
+  }
+
+  @media screen and (max-height: 750px) {
+    top: 29%;
+  }
 
   &.hidden {
     opacity: 0;
   }
-  
+
   span {
     width: 100%;
     text-align: center;
     margin: 10px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Ubuntu", sans-serif;
     text-decoration: underline;
   }
-  
+
   .contributor {
     display: grid;
     place-items: center;
     color: white;
     margin: 5px;
     transition: all 0.3s ease;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.7)
+    flex: 1 1 33.33%;
+    width: 52%;
+    &:nth-last-child(7) {
+      margin: auto;
     }
-    
+    &:hover {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
     img {
       width: 40px;
       height: 40px;
       border-radius: 50%;
     }
-    
+
     span {
       text-decoration: none;
     }
   }
+}
+
+.hidden {
+  left: 50%;
+  position: absolute;
+  transform: translateY(-100%);
+  color: transparent;
+  top: -100%;
+}
+
+.remove-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
