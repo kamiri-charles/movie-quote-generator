@@ -1,10 +1,10 @@
-import React from "react";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import Loader from "react-loaders";
 import Contributor from "./Contributor";
 
 const Contributors = ({ props }) => {
-  const { contrib, contributors } = props;
+  let { contrib, contributors } = props;
+  
   return (
     <div className="contributors hidden" ref={contrib}>
       <span>Contributors</span>
