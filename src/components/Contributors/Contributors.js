@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import Loader from "react-loaders";
-import Contributor from "./Contributor";
+import React, { Fragment } from "react"
+import Loader from "react-loaders"
+import Contributor from "./Contributor"
 
 const Contributors = ({ props }) => {
   let { contrib, contributors } = props;
