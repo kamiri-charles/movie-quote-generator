@@ -57,7 +57,6 @@ const App = () => {
 
   return (
     <div className="App" style={{backgroundColor: change_color()}}> 
-      
       <a href="#main" className="hidden">
         Skip to main content
       </a>
