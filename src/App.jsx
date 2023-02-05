@@ -19,6 +19,14 @@ const App = () => {
     }, 3000);
   };
 
+  const change_color = () => {
+    const bgcolor = Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, '0');
+    return `#${bgcolor}`;
+  };
+
+
   const fetch_contributors = async () => {
     fetch(
       "https://api.github.com/repos/kamiri-charles/movie-quote-generator/contributors"
@@ -48,7 +56,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: change_color()}}> 
+      
       <a href="#main" className="hidden">
         Skip to main content
       </a>
