@@ -6,7 +6,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 
 const QuoteGenerator = ({ props }) => {
-  const { data, copy_quote, load_quote } = props;
+  const { data, copy_quote, load_quote, change_color} = props;
   return (
     <div className="wrapper">
       <div className="quote-wrapper">
@@ -22,7 +22,11 @@ const QuoteGenerator = ({ props }) => {
 
       <div className="buttons">
         <button
-          onClick={load_quote}
+          onClick = {() => {
+            load_quote();
+            change_color();
+          }}
+
           disabled={!data}
           aria-label="Load A New Quote"
         >

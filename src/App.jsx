@@ -11,6 +11,8 @@ const App = () => {
   const [data, setData] = useState(null);
   let [contributors, setContributors] = useState();
   let contrib = useRef();
+  const [bgcolor, setbgColor] = useState("#fffff");
+  
 
   const load_quote = () => {
     setData(null);
@@ -18,6 +20,11 @@ const App = () => {
       setData(quotes[Math.floor(Math.random() * quotes.length)]);
     }, 3000);
   };
+
+  const change_color = () =>{
+    const color = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+    setbgColor(color)
+  }
 
   const fetch_contributors = async () => {
     fetch(
@@ -44,11 +51,12 @@ const App = () => {
 
   useEffect(() => {
     load_quote();
+    change_color();
     fetch_contributors();
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" style = {{backgroundColor: `${bgcolor}`, transition: "all .5s ease"}}> 
       <a href="#main" className="hidden">
         Skip to main content
       </a>
@@ -59,7 +67,7 @@ const App = () => {
         Random Movie Quote Generator
       </h1>
 
-      <QuoteGenerator props={{ data, copy_quote, load_quote }} />
+      <QuoteGenerator props={{ data, copy_quote, load_quote, change_color }} />
 
       <Contributors props={{ contributors, contrib }} />
     </div>
