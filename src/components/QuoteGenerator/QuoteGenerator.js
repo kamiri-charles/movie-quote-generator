@@ -6,7 +6,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 
 const QuoteGenerator = ({ props }) => {
-  const { data, copy_quote, load_quote, change_color} = props;
+  const { data, copy_quote, load_quote, change_color } = props;
   return (
     <div className="wrapper">
       <div className="quote-wrapper">
@@ -22,7 +22,7 @@ const QuoteGenerator = ({ props }) => {
 
       <div className="buttons">
         <button
-          onClick = {() => {
+          onClick={() => {
             load_quote();
             change_color();
           }}
@@ -32,17 +32,33 @@ const QuoteGenerator = ({ props }) => {
         >
           <FontAwesomeIcon icon={faRefresh} color="white" />
         </button>
+        {!data ? (
+          <>
+            <button
+              href={"https://twitter.com/intent/tweet?text="}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Link To Share Current Quote On Twitter"
+              disabled
+            >
+              <FontAwesomeIcon icon={faTwitter} color="white" />
+            </button>
+          </>
+        ) : (
+          <>
+            <a
+              href={"https://twitter.com/intent/tweet?text=" + data.quote + " - " + data.movie}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Link To Share Current Quote On Twitter"
+            >
+              <FontAwesomeIcon icon={faTwitter} color="white" />
+            </a>
+          </>
+        )}
 
-        <a
-          href="https://twitter.com/intent/tweet"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Link To Share Current Quote On Twitter"
-        >
-          <FontAwesomeIcon icon={faTwitter} color="white" />
-        </a>
 
-        <button onClick={copy_quote} aria-label="Copy Current Quote">
+        <button onClick={copy_quote} aria-label="Copy Current Quote" disabled={!data}>
           <FontAwesomeIcon icon={faCopy} color="white" />
         </button>
       </div>
