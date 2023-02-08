@@ -1,6 +1,6 @@
 const Contributor = ({ data }) => {
   return (
-    <a className="contributor" href={data.url}>
+    <a className="contributor" href={data.html_url} target="_blank">
       <img src={data.avatar_url} alt="contributor-avatar" />
       <span>{data.login}</span>
     </a>
