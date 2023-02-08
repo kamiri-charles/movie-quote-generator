@@ -80,15 +80,18 @@ const App = () => {
         Skip to main content
       </a>
       <h1 className="title" tabIndex="0">
-        Random Movie Quote Generator
+          Random Movie Quote Generator
+          <div className="info" onClick={contrib_view} ref={infoRef}>
+            <FontAwesomeIcon icon={faCircleInfo} color="white" />
+          </div>
       </h1>
 
       <QuoteGenerator props={{ data, copy_quote, load_quote, change_color }} />
 
       <Contributors props={{ contributors, contrib, infoRef }} />
-      <div className="info" onClick={contrib_view} ref={infoRef}>
+      {/* <div className="info" onClick={contrib_view} ref={infoRef}>
         <FontAwesomeIcon icon={faCircleInfo} color="white" />
-      </div>
+      </div> */}
     </div>
   );
 };
