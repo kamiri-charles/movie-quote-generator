@@ -153,14 +153,15 @@ button:disabled {
 }
 
 .info {
-  font-size: 25px;
-  border-radius: 50%;
+  font-size: 50px;
+  border-radius: 35%;
   cursor: pointer;
   animation-name: pulse;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
   transition: all 0.3s ease;
+  margin-top: 20px;
 
   &:hover {
     transform: scale(1.2);
@@ -178,22 +179,18 @@ button:disabled {
 }
 
 .contributors {
-  width: 46%;
-  height: 388px;
-  overflow-y: auto !important;
+  width: 50%;
+  height: auto;
   position: absolute;
-  top: 40%;
-  left: 27%;
+  margin-top: 450px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: black;
-  color: white;
+  background: #161b22;
+  color: rgb(255, 255, 255);
   border-radius: 9px;
-  transition: all 0.3s ease;
   opacity: 1;
-  transition: all 0.3s ease;
 
   @media screen and (max-width: 1200px) {
     width: 82%;
@@ -236,38 +233,40 @@ button:disabled {
     opacity: 0;
   }
 
+  .contributor-title {
+    font-size: 25px;
+    font-family: 'Courier New', monospace;
+  }
+
   span {
     width: 100%;
     text-align: center;
     margin: 10px;
     font-family: "Ubuntu", sans-serif;
-    text-decoration: underline;
   }
 
   .contributor {
     display: grid;
     place-items: center;
-    color: white;
+    color: rgb(255, 255, 255);
     transition: all 0.3s ease;
     flex: 1 1 20%;
     width: 52%;
-
-    &:nth-last-child(7) {
-      margin: auto;
-    }
 
     &:hover {
       background: rgba(255, 255, 255, 0.7);
     }
 
     img {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
+      margin-top: 5px;
     }
 
     span {
-      text-decoration: none;
+      margin: 5px;
+      font-family: 'Courier New', monospace;
     }
   }
 }
