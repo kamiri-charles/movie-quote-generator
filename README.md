@@ -36,7 +36,6 @@ https://kamiri-charles.github.io/movie-quote-generator/
 If you have any questions, please contact me at:
 | Name | Github | Email |
 | ----------- | ----------- | ----------- |
-
 | Charles Kamiri | [@kamiri-charles](https://github.com/kamiri-charles) |charleskamiri6@gmail.com |
 
 =======
