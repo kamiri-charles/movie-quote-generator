@@ -11,7 +11,19 @@
 
 ## Description
 
-This is a simple react app that generates random movie quotes.
+This main purpose of this app is to generate regular Quotes inspired from great movies that allows us to be motivated every single day with some new motivations.
+and this Project is open for everyone to contribute as well, So we can make it more responsive and Enhance it's Productivity as well.
+
+### What's exciting : 
+
+This project is good for learning purpose as well cause it uses latest Tech stack such as 
+
+#### React 
+#### SCSS 
+
+Which provides it more room for new Changes and creativity as well.
+
+`So go Ahead and give it a try :)`
 
 ---
 
@@ -34,8 +46,8 @@ https://kamiri-charles.github.io/movie-quote-generator/
 ## Questions?
 
 If you have any questions, please contact me at:
-| Name | Github | Email |
-| ----------- | ----------- | ----------- |
-| Charles Kamiri | [@kamiri-charles](https://github.com/kamiri-charles) |charleskamiri6@gmail.com |
 
-=======
+Charles Kamiri \
+Github : [@kamiri-charles](https://github.com/kamiri-charles)  \
+Email me : [charleskamiri6@gmail.com](mailto:charleskamiri6@gmail.com)
+
