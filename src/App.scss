@@ -26,7 +26,7 @@ a {
 }
 
 button:disabled {
-  background: gray !important;
+  background: #8d99ae !important;
 }
 
 /* ----------------- */
@@ -44,10 +44,14 @@ button:disabled {
   display: flex;
   font-family: "Pacifico", cursive;
   font-size: 1.5em;
+  font-weight: 400;
   text-decoration: underline;
   margin-bottom: 1rem;
   overflow: auto;
   text-align: center;
+  color: #2b2d42;
+  text-shadow: 1px 1px 3px #5e6674;
+  letter-spacing: 0.1em;
   
   .info {
     border-radius: 35%;
@@ -71,7 +75,7 @@ button:disabled {
   align-items: center;
   justify-content: space-around;
   border-radius: 9px;
-  background: #000;
+  background: #2b2d42;
   
   .quote-wrapper {
     width: calc(100% - 120px);
