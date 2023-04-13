@@ -54,7 +54,7 @@ const App = () => {
 
   /* Copy quote */
   const copy_quote = () => {
-    navigator.clipboard.writeText(data.quote + " - " + data.origin);
+    navigator.clipboard.writeText(data.quote + " - " + data.movie);
 
     alert("Copied to clipboard!");
   };
