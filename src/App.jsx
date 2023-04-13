@@ -56,7 +56,6 @@ const App = () => {
   const copy_quote = () => {
     navigator.clipboard.writeText(data.quote + " - " + data.movie);
 
-    // alert("Copied to clipboard!");
     let toast = document.getElementById("toast");
     toast.className = "showToast";
     setTimeout(function(){toast.className = toast.className.replace("showToast", "");}, 3000);
