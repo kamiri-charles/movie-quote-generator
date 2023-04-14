@@ -54,9 +54,11 @@ const App = () => {
 
   /* Copy quote */
   const copy_quote = () => {
-    navigator.clipboard.writeText(data.quote + " - " + data.origin);
+    navigator.clipboard.writeText(data.quote + " - " + data.movie);
 
-    alert("Copied to clipboard!");
+    let toast = document.getElementById("toast");
+    toast.className = "showToast";
+    setTimeout(function(){toast.className = toast.className.replace("showToast", "");}, 3000);
   };
 
   useEffect(() => {
@@ -92,6 +94,9 @@ const App = () => {
       {/* <div className="info" onClick={contrib_view} ref={infoRef}>
         <FontAwesomeIcon icon={faCircleInfo} color="white" />
       </div> */}
+      <div id="toast">
+        Copied to clipboard!
+      </div>
     </div>
   );
 };
