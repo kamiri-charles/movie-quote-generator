@@ -21,7 +21,7 @@ const App = () => {
     setData(null);
     setTimeout(() => {
       setData(quotes[Math.floor(Math.random() * quotes.length)]);
-    }, 3000);
+    }, 2000);
   };
 
   const change_color = () => {
