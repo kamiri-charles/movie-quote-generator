@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 @import "loaders.css/src/animations/pacman.scss";
 @import "loaders.css/src/animations/ball-pulse.scss";
 
@@ -25,64 +26,93 @@ a {
   text-decoration: none;
 }
 
-button:disabled {
-  background: #8d99ae !important;
-}
-
 /* ----------------- */
 
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 20px 10px 0px ;
   overflow: hidden;
   height: 100vh;
+  background:url('./assets/images/body-bg.jpg');
+  background-size: cover;
+  .buttons {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 140px;
+    background: #12121280;
+    
+    button,
+    a {
+      cursor: pointer;
+      font-size: 24px;
+      transition: all 0.2s ease;
+      padding: 10px 30px;
+      text-align: center;
+      background: none;
+      
+      @media screen and (max-width: 1200px) {
+        padding: 9px 28px;
+      }
+      
+      @media screen and (max-width: 600px) {
+        padding: 8px 25px;
+      }
+      
+      @media screen and (max-width: 425px) {
+        padding: 6px 25px;
+      }
+      
+      &:hover {
+       &>svg{
+        color: #aaaaaa;
+       }
+      }
+    }
+  }
 }
 
 .title {
   display: flex;
-  font-family: "Pacifico", cursive;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Pacifico',Sans-serif;
   font-size: 1.5em;
   font-weight: 400;
-  text-decoration: underline;
   margin-bottom: 1rem;
   overflow: auto;
-  text-align: center;
-  color: #2b2d42;
-  text-shadow: 1px 1px 3px #5e6674;
   letter-spacing: 0.1em;
-  
-  .info {
-    border-radius: 35%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-inline: 20px;
-    
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-  
+}
+.info {
+  font-family: 'Lato',Sans-serif;
+  border-radius: 35%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-inline: 20px;
 }
 
 .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 80%;
-  max-width: 500px;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   border-radius: 9px;
-  background: #2b2d42;
-  
+  margin: 0 auto;
   .quote-wrapper {
-    width: calc(100% - 120px);
+    width: 100%;
     height: auto;
-    color: #f5f5f5;
-    padding: 30px;
-    border-bottom: 3px solid #f5f5f5;
+    color: #121212;
     overflow: auto;
     
     @media screen and (max-width: 1200px) {
@@ -101,134 +131,55 @@ button:disabled {
     }
     
     .quote {
-      font-family: "Ubuntu", sans-serif;
-      font-size: 1em;
-      line-height: 1.5em;
-      font-weight: 300;
-      margin-bottom: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 3em;
       
       @media screen and (max-width: 425px) {
         margin-top: 25px;
-        line-height: 23px;
+        font-size: 2.5em;
       }
     }
     
     .origin {
       font-family: "Ubuntu", sans-serif;
       text-align: right;
-      font-size: 1em;
-      margin-top: 100px;
+      font-size: 1.25em;
+      margin-top: 50px;
       overflow: auto;
+      //padding-right: 0.25em;
     }
   }
   
-  .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 90%;
-    height: 100px;
-    
-    button,
-    a {
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 24px;
-      transition: all 0.2s ease;
-      padding: 10px 30px;
-      text-align: center;
-      
-      @media screen and (max-width: 1200px) {
-        padding: 9px 28px;
-      }
-      
-      @media screen and (max-width: 600px) {
-        padding: 8px 25px;
-      }
-      
-      @media screen and (max-width: 425px) {
-        padding: 6px 25px;
-      }
-      
-      &:hover {
-        transform: scale(1.09);
-      }
-      
-      &:nth-child(1) {
-        background: crimson;
-      }
-      
-      &:nth-child(2) {
-        background: blue;
-      }
-      
-      &:nth-child(3) {
-        background: #00b894;
-      }
-    }
-  }
 }
 
 .contributors {
-  height: auto;
-  max-width: 500px;
+  height: 90%;
+  width: 90%;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: #000;
+  padding: 10px 20px;
+  background: #000000d4;
   color: rgb(255, 255, 255);
   border-radius: 9px;
   opacity: 1;
   transition: opacity 0.3s ease-in;
-  
-  @media screen and (max-width: 1200px) {
-    width: 82%;
-    left: 9%;
-  }
-  
-  @media screen and (max-width: 600px) {
-    width: 80%;
-    left: 10%;
-  }
-  
-  @media screen and (max-width: 425px) {
-    width: 80%;
-    left: 10%;
-  }
-  
-  // Media Queries for Height
-  
-  @media screen and (max-height: 1500px) {
-    top: 39%;
-  }
-  
-  @media screen and (max-height: 1200px) {
-    top: 37%;
-  }
-  
-  @media screen and (max-height: 990px) {
-    top: 35%;
-  }
-  
-  @media screen and (max-height: 890px) {
-    top: 33%;
-  }
-  
-  @media screen and (max-height: 750px) {
-    top: 29%;
-  }
-  
+  overflow: scroll;
   &.hidden {
     opacity: 0;
     transition: opacity 0.3s ease-in;
   }
   
   .contributor-title {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1em;
-    text-decoration: underline;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    //text-decoration: underline;
     
   }
   
@@ -240,13 +191,14 @@ button:disabled {
   }
   
   .contributor {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: rgb(255, 255, 255);
     transition: all 0.3s ease;
-    flex: 1 1 20%;
-    width: 52%;
-    padding: 20px 10px;
+    width: 150px;
+    height: 150px;
     border-radius: 10px;
     
     &:hover {
@@ -257,11 +209,9 @@ button:disabled {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      margin-top: 5px;
     }
     
     span {
-      margin: 5px;
       font-family: 'Ubuntu', sans-serif;
     }
   }

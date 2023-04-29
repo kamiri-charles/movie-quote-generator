@@ -7,7 +7,7 @@ const Contributors = ({ props }) => {
 
   return (
     <div className="contributors hidden" ref={contrib}>
-      <span class="contributor-title">Contributors</span>
+      <span className="contributor-title">Contributors</span>
       {!contributors ? (
         <Loader type="ball-pulse" />
       ) : (
