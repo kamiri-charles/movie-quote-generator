@@ -222,6 +222,13 @@
       "year": 1968
     },
     {
+      "quote": "You know what they say: 'Human see, human do.",
+      "movie": "Planet of the Apes",
+      "type": "movie",
+      "year": "1968"
+
+    },
+    {
       "quote": "Hello, gorgeous.",
       "movie": "Funny Girl",
       "type": "movie",
@@ -439,6 +446,12 @@
     },
     {
       "quote": "Looks like I picked the wrong week to quit sniffing glue.",
+      "movie": "Airplane",
+      "type": "movie",
+      "year": 1980
+    },
+    {
+      "quote": "I am serious. And don't call me Shirley.",
       "movie": "Airplane",
       "type": "movie",
       "year": 1980
@@ -708,6 +721,12 @@
       "year": 1988
     },
     {
+      "quote": "I have come here to chew bubblegum and kick ass...and I'm all out of bubblegum.",
+      "movie": "They Live",
+      "type": "movie",
+      "year": 1988
+    },
+    {
       "quote": "Strange things are afoot at The Circle K.",
       "movie": "Bill and Ted's Most Excellent Adventure",
       "type": "movie",
@@ -788,6 +807,12 @@
     {
       "quote": "As far back as I can remember, I always wanted to be a gangster.",
       "movie": "Goodfellas",
+      "type": "movie",
+      "year": 1990
+    },
+    {
+      "quote": "This is mu house! I have to defend it!",
+      "movie": "Home Alone",
       "type": "movie",
       "year": 1990
     },
@@ -1158,7 +1183,7 @@
       "year": 1997
     },
     {
-      "quote": "I'm king of the world!",
+      "quote": "I'm the king of the world!",
       "movie": "Titanic",
       "type": "movie",
       "year": 1997
@@ -2515,6 +2540,12 @@
     },
     {
       "quote": "If you let my daughter go now, that'll be the end of it. I will not look for you, I will not pursue you. But if you don't, I will look for you, I will find you, and I will kill you.",
+      "movie": "Taken",
+      "type": "movie",
+      "year": 2008
+    },
+    {
+      "quote": "I don't know who you are. I don't know what you want. If you are looking for ransom, I can tell you I don't have money. But what I do have are a very particular set of skills; skills I have acquired over a very long career. Skills that make me a nightmare for people like you.",
       "movie": "Taken",
       "type": "movie",
       "year": 2008
