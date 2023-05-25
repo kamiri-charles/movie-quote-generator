@@ -26,7 +26,7 @@ a {
 }
 
 button:disabled {
-  background: #8d99ae !important;
+  background: #9fa4ad !important;
 }
 
 /* ----------------- */
@@ -49,7 +49,7 @@ button:disabled {
   margin-bottom: 1rem;
   overflow: auto;
   text-align: center;
-  color: #2b2d42;
+  color: #29292e;
   text-shadow: 1px 1px 3px #5e6674;
   letter-spacing: 0.1em;
   
@@ -75,14 +75,14 @@ button:disabled {
   align-items: center;
   justify-content: space-around;
   border-radius: 9px;
-  background: #2b2d42;
+  background: #29292e;
   
   .quote-wrapper {
     width: calc(100% - 120px);
     height: auto;
     color: #f5f5f5;
     padding: 30px;
-    border-bottom: 3px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f546;
     overflow: auto;
     
     @media screen and (max-width: 1200px) {
@@ -155,15 +155,15 @@ button:disabled {
       }
       
       &:nth-child(1) {
-        background: crimson;
+        background: #db70b7;
       }
       
       &:nth-child(2) {
-        background: blue;
+        background: #3a95eb;
       }
       
       &:nth-child(3) {
-        background: #00b894;
+        background: #2ab97a;
       }
     }
   }
