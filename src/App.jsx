@@ -8,15 +8,26 @@ import Contributors from "./components/Contributors/Contributors";
 import QuoteGenerator from "./components/QuoteGenerator/QuoteGenerator";
 
 
+// Use HSL to better control the saturation and lightness
+const getRandomHSL = () => {
+  // Saturation can be between 50 and 90
+  const saturation = Math.floor(Math.random() * 10) + 80;
+  // Lightness can be between 70 and 90
+  const lightness = Math.floor(Math.random() * 20) + 70;
+  // Hue can be totally random - from 0 to 360
+  const hue = Math.floor(Math.random() * 360);
+  
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+};
 
 const App = () => {
   const [data, setData] = useState(null);
   let [contributors, setContributors] = useState();
   let contrib = useRef();
-  const [bgcolor, setbgColor] = useState("#fffff");
+  const [bgcolor, setbgColor] = useState(getRandomHSL());
   const infoRef = useRef(null);
 
-
+  
   const load_quote = () => {
     setData(null);
     setTimeout(() => {
@@ -25,8 +36,7 @@ const App = () => {
   };
 
   const change_color = () => {
-    const color = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
-    setbgColor(color)
+    setbgColor(getRandomHSL());
   }
 
   const setHtmlBackground = (bgcolor) => {

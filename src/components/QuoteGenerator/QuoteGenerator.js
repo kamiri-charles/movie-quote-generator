@@ -26,39 +26,25 @@ const QuoteGenerator = ({ props }) => {
             load_quote();
             change_color();
           }}
-
-          disabled={!data}
           aria-label="Load A New Quote"
+          disabled={!data}
         >
           <FontAwesomeIcon icon={faRefresh} color="white" />
         </button>
-        {!data ? (
-          <>
-            <button
-              href={"https://twitter.com/intent/tweet?text="}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Link To Share Current Quote On Twitter"
-              disabled
-            >
-              <FontAwesomeIcon icon={faTwitter} color="white" />
-            </button>
-          </>
-        ) : (
-          <>
-            <a
-              href={"https://twitter.com/intent/tweet?text=" + data.quote + " - " + data.movie}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Link To Share Current Quote On Twitter"
-            >
-              <FontAwesomeIcon icon={faTwitter} color="white" />
-            </a>
-          </>
-        )}
-
-
-        <button onClick={copy_quote} aria-label="Copy Current Quote" disabled={!data}>
+        <button
+          onClick={() => {
+            window.open("https://twitter.com/intent/tweet?text=" + data.quote + " - " + data.movie);
+          }}
+          aria-label="Link To Share Current Quote On Twitter"
+          disabled={!data}
+        >
+          <FontAwesomeIcon icon={faTwitter} color="white" />
+        </button>
+        <button 
+          onClick={copy_quote} 
+          aria-label="Copy Current Quote" 
+          disabled={!data}
+        >
           <FontAwesomeIcon icon={faCopy} color="white" />
         </button>
       </div>
