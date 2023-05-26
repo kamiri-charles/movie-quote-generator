@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/movie-quote-generator/static/css/main.a4c755f8.css",
-    "main.js": "/movie-quote-generator/static/js/main.3f1ba508.js",
+    "main.css": "/movie-quote-generator/static/css/main.1a503ad6.css",
+    "main.js": "/movie-quote-generator/static/js/main.2b4f4854.js",
     "index.html": "/movie-quote-generator/index.html",
-    "main.a4c755f8.css.map": "/movie-quote-generator/static/css/main.a4c755f8.css.map",
-    "main.3f1ba508.js.map": "/movie-quote-generator/static/js/main.3f1ba508.js.map"
+    "main.1a503ad6.css.map": "/movie-quote-generator/static/css/main.1a503ad6.css.map",
+    "main.2b4f4854.js.map": "/movie-quote-generator/static/js/main.2b4f4854.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4c755f8.css",
-    "static/js/main.3f1ba508.js"
+    "static/css/main.1a503ad6.css",
+    "static/js/main.2b4f4854.js"
   ]
 }
