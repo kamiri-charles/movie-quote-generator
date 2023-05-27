@@ -204,7 +204,7 @@
       "year": 1967
     },
     {
-      "quote": "You only live twice:Once when you are born And once when you look death in the face",
+      "quote": "You only live twice. Once when you are born and once when you look death in the face",
       "movie": "You only live twice",
       "type": "movie",
       "year": 1967
@@ -2671,7 +2671,7 @@
       "year": 2008
     },
     {
-      "quote": "Fuck them kids",
+      "quote": "Fuck them kids.",
       "movie": "Soul Men",
       "type": "movie",
       "year": 2008
@@ -3031,7 +3031,7 @@
       "year": 2012
     },
     {
-      "quote": "Ah you think darkness is your ally? You merely adopted the dark. I was born in it, molded by it. I didn't see the light until I was already a man, by then it was nothing to me but blinding",
+      "quote": "Ah you think darkness is your ally? You merely adopted the dark. I was born in it, molded by it. I didn't see the light until I was already a man, by then it was nothing to me but blinding.",
       "movie": "Dark Knight Rises",
       "type": "movie",
       "year": 2012
@@ -3607,7 +3607,7 @@
       "year": 2015
     },
     {
-      "quote": "Haven't you ever wanted something so ba that it becomes more than a want?",
+      "quote": "Haven't you ever wanted something so bad that it becomes more than a want?",
       "movie": "Rebel of the Sands",
       "type": "movie",
       "year": 2015
@@ -4721,5 +4721,23 @@
       "movie": "Nomadland",
       "type": "movie",
       "year": 2020
+    },
+    {
+      "quote": "Those who cling to death, live. Those who cling to life, die.",
+      "movie": "John Wick. Chapter 4",
+      "type": "movie",
+      "year": 2023
+    },
+    {
+      "quote": "A blind man, a guy with a dog and John Wick walk into a bar and take a seat at the table. That either sounds like the beginning of a stupendous joke or a most profitable opportunity.",
+      "movie": "John Wick. Chapter 4",
+      "type": "movie",
+      "year": 2023
+    },
+    {
+      "quote": "I don't have to win, we both just have to lose.",
+      "movie": "Antman and The Wasp. Quantumania",
+      "type": "movie",
+      "year": 2023
     }
   ]
