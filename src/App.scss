@@ -288,15 +288,16 @@ button:disabled {
   visibility: hidden;
   min-width: 250px;
   margin-left: -125px;
-  background-color: #333;
+  background-color: #29292e;
   color: #fff;
   text-align: center;
-  border-radius: 2px;
+  border-radius: 9px;
   padding: 16px;
   position: fixed;
   z-index: 1;
   left: 50%;
   bottom: 30px;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #toast.showToast {
