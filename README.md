@@ -69,7 +69,7 @@ If you want to run the Movie Quote Generator locally on your own computer, you c
 
 ## Contributing
 
-If you want to contribute to the Movie Quote Generator, click on [CONTRIBUTING.md](https://github.com/Otavie/movie-quote-generator/blob/master/README.md), for steps and direction.
+If you want to contribute to the Movie Quote Generator, click on [CONTRIBUTING.md](https://github.com/Otavie/movie-quote-generator/blob/master/CONTRIBUTING.md) for steps and direction.
 
 
 ## Credits
