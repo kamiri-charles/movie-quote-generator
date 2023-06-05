@@ -12,8 +12,8 @@ import QuoteGenerator from "./components/QuoteGenerator/QuoteGenerator";
 const getRandomHSL = () => {
   // Saturation can be between 50 and 90
   const saturation = Math.floor(Math.random() * 10) + 80;
-  // Lightness can be between 70 and 90
-  const lightness = Math.floor(Math.random() * 20) + 70;
+  // Lightness can be between 95 and 99
+  const lightness = Math.floor(Math.random() * 4) + 95;
   // Hue can be totally random - from 0 to 360
   const hue = Math.floor(Math.random() * 360);
   
@@ -42,7 +42,7 @@ const App = () => {
   const setHtmlBackground = (bgcolor) => {
     const root = document.querySelector("html");
     root.style.backgroundColor = `${bgcolor}`;
-    root.style.transition = "all .5s ease";
+    root.style.transition = "all .51s ease";
   };
   setHtmlBackground(bgcolor);
 
@@ -94,7 +94,7 @@ const App = () => {
       <h1 className="title" tabIndex="0">
           Random Movie Quote Generator
           <div className="info" onClick={contrib_view} ref={infoRef}>
-            <FontAwesomeIcon icon={faCircleInfo} color="white" />
+            <FontAwesomeIcon icon={faCircleInfo} color="grey" />
           </div>
       </h1>
 

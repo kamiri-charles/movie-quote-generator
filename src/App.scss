@@ -42,15 +42,13 @@ button:disabled {
 
 .title {
   display: flex;
-  font-family: "Pacifico", cursive;
+  font-family: "arial", cursive;
   font-size: 1.5em;
   font-weight: 400;
-  text-decoration: underline;
   margin-bottom: 1rem;
   overflow: auto;
   text-align: center;
   color: #29292e;
-  text-shadow: 1px 1px 3px #5e6674;
   letter-spacing: 0.1em;
   
   .info {
