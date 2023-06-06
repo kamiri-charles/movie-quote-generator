@@ -42,7 +42,7 @@ const App = () => {
   const setHtmlBackground = (bgcolor) => {
     const root = document.querySelector("html");
     root.style.backgroundColor = `${bgcolor}`;
-    root.style.transition = "all .5s ease";
+    root.style.transition = "all .51s ease";
   };
   setHtmlBackground(bgcolor);
 
@@ -94,7 +94,7 @@ const App = () => {
       <h1 className="title" tabIndex="0">
           Random Movie Quote Generator
           <div className="info" onClick={contrib_view} ref={infoRef}>
-            <FontAwesomeIcon icon={faCircleInfo} color="white" />
+            <FontAwesomeIcon icon={faCircleInfo} color="grey" />
           </div>
       </h1>
 
