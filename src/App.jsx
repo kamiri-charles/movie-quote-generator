@@ -12,8 +12,8 @@ import QuoteGenerator from "./components/QuoteGenerator/QuoteGenerator";
 const getRandomHSL = () => {
   // Saturation can be between 50 and 90
   const saturation = Math.floor(Math.random() * 10) + 80;
-  // Lightness can be between 95 and 99
-  const lightness = Math.floor(Math.random() * 4) + 95;
+  // Lightness can be between 70 and 90
+  const lightness = Math.floor(Math.random() * 20) + 70;
   // Hue can be totally random - from 0 to 360
   const hue = Math.floor(Math.random() * 360);
   
