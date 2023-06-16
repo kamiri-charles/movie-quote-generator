@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap");
-@import "loaders.css/src/animations/pacman.scss";
-@import "loaders.css/src/animations/ball-pulse.scss";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&family=Sue+Ellen+Francisco&family=Ubuntu&display=swap');
+@import 'loaders.css/src/animations/pacman.scss';
+@import 'loaders.css/src/animations/ball-pulse.scss';
 
 /* Resets and loader */
 
@@ -42,26 +42,24 @@ button:disabled {
 
 .title {
   display: flex;
-  font-family: "arial", cursive;
+  font-family: 'arial', cursive;
   font-size: 1.5em;
   font-weight: 400;
   margin-bottom: 1rem;
-  overflow: auto;
   text-align: center;
   color: #29292e;
   letter-spacing: 0.1em;
-  
+
   .info {
     border-radius: 35%;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-inline: 20px;
-    
+
     &:hover {
       transform: scale(1.2);
     }
   }
-  
 }
 
 .wrapper {
@@ -74,7 +72,7 @@ button:disabled {
   justify-content: space-around;
   border-radius: 9px;
   background: #29292e;
-  
+
   .quote-wrapper {
     width: calc(100% - 120px);
     height: auto;
@@ -82,51 +80,51 @@ button:disabled {
     padding: 30px;
     border-bottom: 1px solid #f5f5f546;
     overflow: auto;
-    
+
     @media screen and (max-width: 1200px) {
       padding: 25px;
       width: calc(100% - 115px);
     }
-    
+
     @media screen and (max-width: 600px) {
       padding: 20px;
       width: calc(100% - 60px);
     }
-    
+
     @media screen and (max-width: 425px) {
       padding: 15px;
       width: calc(100% - 40px);
     }
-    
+
     .quote {
-      font-family: "Ubuntu", sans-serif;
+      font-family: 'Ubuntu', sans-serif;
       font-size: 1em;
       line-height: 1.5em;
       font-weight: 300;
       margin-bottom: 20px;
-      
+
       @media screen and (max-width: 425px) {
         margin-top: 25px;
         line-height: 23px;
       }
     }
-    
+
     .origin {
-      font-family: "Ubuntu", sans-serif;
+      font-family: 'Ubuntu', sans-serif;
       text-align: right;
       font-size: 1em;
       margin-top: 100px;
       overflow: auto;
     }
   }
-  
+
   .buttons {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 90%;
     height: 100px;
-    
+
     button,
     a {
       border-radius: 6px;
@@ -135,31 +133,31 @@ button:disabled {
       transition: all 0.2s ease;
       padding: 10px 30px;
       text-align: center;
-      
+
       @media screen and (max-width: 1200px) {
         padding: 9px 28px;
       }
-      
+
       @media screen and (max-width: 600px) {
         padding: 8px 25px;
       }
-      
+
       @media screen and (max-width: 425px) {
         padding: 6px 25px;
       }
-      
+
       &:hover {
         transform: scale(1.09);
       }
-      
+
       &:nth-child(1) {
         background: #db70b7;
       }
-      
+
       &:nth-child(2) {
         background: #3a95eb;
       }
-      
+
       &:nth-child(3) {
         background: #2ab97a;
       }
@@ -180,63 +178,66 @@ button:disabled {
   border-radius: 9px;
   opacity: 1;
   transition: opacity 0.3s ease-in;
-  
-  @media screen and (max-width: 1200px) {
+
+  @media screen and (min-width: 701px) and (max-width: 1000px) {
+    max-width: 750px;
+  }
+
+  @media screen and (max-width: 700px) {
     width: 82%;
     left: 9%;
   }
-  
+
   @media screen and (max-width: 600px) {
     width: 80%;
     left: 10%;
   }
-  
+
   @media screen and (max-width: 425px) {
     width: 80%;
     left: 10%;
   }
-  
+
   // Media Queries for Height
-  
+
   @media screen and (max-height: 1500px) {
     top: 39%;
   }
-  
+
   @media screen and (max-height: 1200px) {
     top: 37%;
   }
-  
+
   @media screen and (max-height: 990px) {
     top: 35%;
   }
-  
+
   @media screen and (max-height: 890px) {
     top: 33%;
   }
-  
+
   @media screen and (max-height: 750px) {
     top: 29%;
   }
-  
+
   &.hidden {
     opacity: 0;
     transition: opacity 0.3s ease-in;
   }
-  
+
   .contributor-title {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1em;
     text-decoration: underline;
-    
   }
-  
+
   span {
     width: 100%;
     text-align: center;
     margin: 10px;
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
   }
-  
+
   .contributor {
     display: grid;
     place-items: center;
@@ -246,18 +247,18 @@ button:disabled {
     width: 52%;
     padding: 20px 10px;
     border-radius: 10px;
-    
+
     &:hover {
       background: rgba(255, 255, 255, 0.7);
     }
-    
+
     img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
       margin-top: 5px;
     }
-    
+
     span {
       margin: 5px;
       font-family: 'Ubuntu', sans-serif;
@@ -295,7 +296,7 @@ button:disabled {
   z-index: 1;
   left: 50%;
   bottom: 30px;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 #toast.showToast {
@@ -304,21 +305,45 @@ button:disabled {
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

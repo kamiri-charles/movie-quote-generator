@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import quotes from "./quotes.json";
-import "./App.scss";
-import { useRef } from "react";
-import Contributors from "./components/Contributors/Contributors";
-import QuoteGenerator from "./components/QuoteGenerator/QuoteGenerator";
-
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import quotes from './quotes.json';
+import './App.scss';
+import { useRef } from 'react';
+import Contributors from './components/Contributors/Contributors';
+import QuoteGenerator from './components/QuoteGenerator/QuoteGenerator';
 
 // Use HSL to better control the saturation and lightness
 const getRandomHSL = () => {
@@ -16,7 +15,7 @@ const getRandomHSL = () => {
   const lightness = Math.floor(Math.random() * 20) + 70;
   // Hue can be totally random - from 0 to 360
   const hue = Math.floor(Math.random() * 360);
-  
+
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 };
 
@@ -27,7 +26,6 @@ const App = () => {
   const [bgcolor, setbgColor] = useState(getRandomHSL());
   const infoRef = useRef(null);
 
-  
   const load_quote = () => {
     setData(null);
     setTimeout(() => {
@@ -37,76 +35,86 @@ const App = () => {
 
   const change_color = () => {
     setbgColor(getRandomHSL());
-  }
+  };
 
   const setHtmlBackground = (bgcolor) => {
-    const root = document.querySelector("html");
+    const root = document.querySelector('html');
     root.style.backgroundColor = `${bgcolor}`;
-    root.style.transition = "all .51s ease";
+    root.style.transition = 'all .51s ease';
   };
   setHtmlBackground(bgcolor);
 
   const fetch_contributors = async () => {
     fetch(
-      "https://api.github.com/repos/kamiri-charles/movie-quote-generator/contributors"
+      'https://api.github.com/repos/kamiri-charles/movie-quote-generator/contributors'
     )
       .then((res) => res.json())
       .then((data) => setContributors(data));
   };
 
   let contrib_view = () => {
-    if (contrib.current.classList.contains("hidden")) {
-      contrib.current.classList.remove("hidden");
+    if (contrib.current.classList.contains('hidden')) {
+      contrib.current.classList.remove('hidden');
     } else {
-      contrib.current.classList.add("hidden");
+      contrib.current.classList.add('hidden');
     }
   };
 
   /* Copy quote */
   const copy_quote = () => {
-    navigator.clipboard.writeText(data.quote + " - " + data.movie);
+    navigator.clipboard.writeText(data.quote + ' - ' + data.movie);
 
-    let toast = document.getElementById("toast");
-    toast.className = "showToast";
-    setTimeout(function(){toast.className = toast.className.replace("showToast", "");}, 3000);
+    let toast = document.getElementById('toast');
+    toast.className = 'showToast';
+    setTimeout(function () {
+      toast.className = toast.className.replace('showToast', '');
+    }, 3000);
   };
 
   useEffect(() => {
     load_quote();
     change_color();
-    fetch_contributors(); document.addEventListener("click", handleClick);
+    fetch_contributors();
+    document.addEventListener('click', handleClick);
     return () => {
-      document.removeEventListener("click", handleClick);
+      document.removeEventListener('click', handleClick);
     };
   }, []);
 
   const handleClick = (event) => {
-    if (!infoRef.current.contains(event.target)) {
-      contrib.current.classList.add("hidden");
+    if (contrib.current && !infoRef.current.contains(event.target)) {
+      contrib.current.classList.add('hidden');
     }
   };
 
   return (
-    <div className="App">
-      <a href="#main" className="hidden">
+    <div className='App'>
+      <a href='#main' className='hidden'>
         Skip to main content
       </a>
-      <h1 className="title" tabIndex="0">
-          Random Movie Quote Generator
-          <div className="info" onClick={contrib_view} ref={infoRef}>
-            <FontAwesomeIcon icon={faCircleInfo} color="grey" />
-          </div>
+      <h1 className='title' tabIndex='0'>
+        Random Movie Quote Generator
+        <div className='info' onClick={contrib_view} ref={infoRef}>
+          <FontAwesomeIcon icon={faCircleInfo} color='grey' />
+        </div>
       </h1>
 
-      <QuoteGenerator props={{ data, copy_quote, load_quote, change_color }} />
+      <QuoteGenerator
+        data={data}
+        copy_quote={copy_quote}
+        load_quote={load_quote}
+        change_color={change_color}
+      />
 
-      <Contributors props={{ contributors, contrib, infoRef }} />
+      <Contributors
+        contributors={contributors}
+        contrib={contrib}
+        infoRef={infoRef}
+      />
       {/* <div className="info" onClick={contrib_view} ref={infoRef}>
         <FontAwesomeIcon icon={faCircleInfo} color="white" />
       </div> */}
-      <div id="toast">
-        Copied to clipboard!
-      </div>
+      <div id='toast'>Copied to clipboard!</div>
     </div>
   );
 };
