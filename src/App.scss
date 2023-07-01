@@ -38,6 +38,8 @@ button:disabled {
   justify-content: center;
   overflow: hidden;
   height: 100vh;
+  background-color: #4d4855;
+  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
 }
 
 .title {
@@ -47,7 +49,7 @@ button:disabled {
   font-weight: 400;
   margin-bottom: 1rem;
   text-align: center;
-  color: #29292e;
+  color: WHITE;
   letter-spacing: 0.1em;
 
   .info {
@@ -64,14 +66,17 @@ button:disabled {
 
 .wrapper {
   width: 80%;
-  max-width: 500px;
+  max-width: 600px;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border-radius: 9px;
-  background: #29292e;
+  border-radius: 10px;
+  background: linear-gradient(135deg , rgba(255 , 255 , 255 , 0.1) , rgba(255 , 255 , 255 , 0));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255 , 255 , 255 , 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0 , 0 , 0 , 0.37);
 
   .quote-wrapper {
     width: calc(100% - 120px);
@@ -151,15 +156,19 @@ button:disabled {
       }
 
       &:nth-child(1) {
-        background: #db70b7;
+        // background: #db70b7;
+        background-color: #ff7878;
+        background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 74%);
       }
 
       &:nth-child(2) {
-        background: #3a95eb;
+        background-color: #2a2a72;
+        background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
       }
 
       &:nth-child(3) {
-        background: #2ab97a;
+        background-color: #00b712;
+        background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
       }
     }
   }

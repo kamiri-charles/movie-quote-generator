@@ -95,7 +95,7 @@ const App = () => {
       <h1 className='title' tabIndex='0'>
         Random Movie Quote Generator
         <div className='info' onClick={contrib_view} ref={infoRef}>
-          <FontAwesomeIcon icon={faCircleInfo} color='grey' />
+          <FontAwesomeIcon icon={faCircleInfo} color='white' />
         </div>
       </h1>
 
