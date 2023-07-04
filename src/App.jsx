@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import quotes from './quotes.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
-import quotes from './quotes.json';
-import './App.scss';
-import { useRef } from 'react';
 import Contributors from './components/Contributors/Contributors';
 import QuoteGenerator from './components/QuoteGenerator/QuoteGenerator';
+import './App.scss';
 
 // Use HSL to better control the saturation and lightness
 const getRandomHSL = () => {
